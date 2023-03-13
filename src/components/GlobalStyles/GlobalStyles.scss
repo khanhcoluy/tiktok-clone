@@ -27,3 +27,15 @@ body {
   line-height: 1.5;
   text-rendering: optimizespeed;
 }
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
+}
