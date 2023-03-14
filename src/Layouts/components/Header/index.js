@@ -8,9 +8,10 @@ import {
   faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { PopperWrapper } from '~/components/Popper';
+import AccountItem from '~/components/AccountItem';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import { PopperWrapper } from '~/components/Popper';
 
 const cx = classNames.bind(styles);
 
@@ -32,7 +33,17 @@ function Header() {
           visible={accountsList.length > 0}
           render={(attrs) => (
             <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-              <PopperWrapper>{accountsList}</PopperWrapper>
+              <PopperWrapper>
+                {
+                  <div>
+                    <span className={cx('search-title')}>Accounts</span>
+                    <AccountItem />
+                    <AccountItem />
+                    <AccountItem />
+                    <AccountItem />
+                  </div>
+                }
+              </PopperWrapper>
             </div>
           )}
         >
