@@ -10,6 +10,7 @@ import {
 
 import { PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 
@@ -61,7 +62,9 @@ function Header() {
             </button>
           </div>
         </Tippy>
-        <div className={cx('actions')}></div>
+        <div className={cx('actions')}>
+          <Button>button</Button>
+        </div>
       </div>
     </div>
   );
