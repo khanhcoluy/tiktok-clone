@@ -1,0 +1,42 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 6px 8px;
+  font-size: 1.6rem;
+  height: 36px;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
+
+  + .wrapper {
+    margin-left: 16px;
+  }
+}
+
+.icon + .btn-label,
+.btn-label + .icon {
+  margin-left: 8px;
+}
+
+.primary {
+  color: var(--text);
+  background-color: var(--primary);
+  padding: 6px 8px;
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      #fe2c55;
+  }
+}
+
+.secondary {
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  background: rgba(255, 255, 255, 1);
+  padding: 0 16px;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}

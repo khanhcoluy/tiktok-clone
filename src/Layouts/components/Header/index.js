@@ -6,6 +6,8 @@ import {
   faXmarkCircle,
   faMagnifyingGlass,
   faSpinner,
+  faPlus,
+  faEllipsisVertical,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { PopperWrapper } from '~/components/Popper';
@@ -63,7 +65,14 @@ function Header() {
           </div>
         </Tippy>
         <div className={cx('actions')}>
-          <Button>button</Button>
+          <Button leftIcon={<FontAwesomeIcon icon={faPlus} />} secondary>
+            Upload
+          </Button>
+          <Button primary>Login</Button>
+          <FontAwesomeIcon
+            className={cx('header-more-item-icon')}
+            icon={faEllipsisVertical}
+          />
         </div>
       </div>
     </div>

@@ -3,10 +3,20 @@ import { Link } from 'react-router-dom';
 
 import styles from './Button.module.scss';
 
-// eslint-disable-next-line no-unused-vars
 const cx = classNames.bind(styles);
 
-function Button({ to, href, children, onClick, ...passProps }) {
+function Button({
+  to,
+  href,
+  primary = false,
+  secondary = false,
+  outline = false,
+  children,
+  leftIcon,
+  rightIcon,
+  onClick,
+  ...passProps
+}) {
   const props = {
     onClick,
     ...passProps,
@@ -22,9 +32,17 @@ function Button({ to, href, children, onClick, ...passProps }) {
     Comp = 'a';
   }
 
+  const classes = cx('wrapper', {
+    primary,
+    secondary,
+    outline,
+  });
+
   return (
-    <Comp {...props}>
-      <span>{children}</span>
+    <Comp className={classes} {...props}>
+      {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+      <span className={cx('btn-label')}>{children}</span>
+      {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
     </Comp>
   );
 }
